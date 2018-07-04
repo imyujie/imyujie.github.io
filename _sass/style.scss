@@ -46,6 +46,8 @@ body>header {
 }
 
 .sitemark {
+    position: relative;
+    top: -1.5rem;
 
 }
 
@@ -104,7 +106,7 @@ article.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin-bottom: 4rem;
     p, ul, ol, blockquote {
         width: 100%;
     }
@@ -119,18 +121,22 @@ article.wrapper {
             line-height: 1.75;
             font-weight: 600;
             &:before {
+                font-family: Arial, Helvetica, sans-serif;
                 content: "“";
                 display: block;
                 position: absolute;
-                top: .2rem;
-                left: -.8rem;
-                font-size: 1rem;
-                color: #333;
+                top: -.1rem;
+                left: -.7rem;
+                font-size: 1.2rem;
+                color: #888;
             }
             &:after {
+                font-family: Arial, Helvetica, sans-serif;
                 content: "”";
-                font-size: 1rem;
-                color: #333;
+                position: relative;
+                font-size: 1.2rem;
+                right: .3rem;
+                color: #888;
             }
         }
         
@@ -138,7 +144,7 @@ article.wrapper {
 
     .caption {
         width: calc(100% - 2.8rem);
-        margin: 1rem auto 0 auto;
+        margin: 1.2rem auto 0 auto;
         font-size: .8rem;
         max-width: 570px;
         color: #888;
@@ -164,20 +170,19 @@ article.wrapper {
 
     a {
         display: inline-block;
-        padding: 0 8px;
+        padding: 0 10px;
         margin: 0 4px;
-        background: #f4f4f4;
+        background: #f0f0f0;
         border-radius: 100px;
         text-decoration: none;
         color: #333;
-        font-weight: 600;
         &:before {
             content: "🔗";
 
         }
         &:hover {
-            color: #111;
-            background: #eee;
+            color: #fff;
+            background: #333;
         }
     }
 
@@ -189,6 +194,19 @@ article.wrapper {
         max-width: 780px;
         height: 400px;
         background-color: #f0f0f0;
+    }
+
+    h2 {
+        width: 100%;
+        font-size: 1.4rem;
+        text-align: left;
+        margin: 2rem 0 .7rem 0;
+    }
+
+    em {
+        font-weight: 900;
+        font-style: normal;
+        color: #111;
     }
 }
 
@@ -202,7 +220,7 @@ article.wrapper {
 
 .post-title {
     color: #111;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
@@ -211,8 +229,55 @@ article.wrapper {
     padding: 0 $mobile-padding-lr+.1rem;
 }
 
+.author-info {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+
+    .avatar {
+        
+        width: 48px;
+        height: 48px;
+        border-radius: 80px;
+        background-color: #eee;
+    }
+    .info {
+        padding: .2rem 0;
+        width: 100%;
+        flex: 1;
+        box-sizing: border-box;
+        padding-left: 1rem;
+        .author-name {
+            font-weight: 600;
+            margin-bottom: .2rem;
+            color: #111;
+        }
+        .author-desc {
+            color: #888;
+        }
+    }
+}
+
 footer {
-    height: 90px;
+    position: relative;
+    display: none;
+    height: 3rem;
+    background-color: #000;
+    z-index: -100;
+}
+
+.wechat footer {
+    display: block;
+    margin-top: 3rem;
+    .sitemark {
+        height: 1px;
+    }
+    .nav {
+        padding: 1rem 0;
+    }
+    
 }
 .post-header {
     margin-bottom: 3rem;
