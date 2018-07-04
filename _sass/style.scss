@@ -47,8 +47,6 @@ body>header {
 
 .sitemark {
     position: relative;
-    top: -1.5rem;
-
 }
 
 $padding-lr: 1.1rem;
@@ -226,6 +224,7 @@ article.wrapper {
 
 
 .header-container {
+    box-sizing: border-box;
     padding: 0 $mobile-padding-lr+.1rem;
 }
 
@@ -273,6 +272,7 @@ footer {
     margin-top: 3rem;
     .sitemark {
         height: 1px;
+        top: -1.5rem;
     }
     .nav {
         padding: 1rem 0;
@@ -283,11 +283,85 @@ footer {
     margin-bottom: 3rem;
 }
 
+
+.home .wechat header {
+    display: block;
+}
+.wechat {
+    .rss-subscribe {
+        display: none;
+    }
+}
+
+.home {
+    background-color: #fff;
+}
+
+.post-list {
+    padding: 0;
+    margin-top: 3rem;
+    li {
+        position: relative;
+        background-color: #fff;
+        width: 100vw;
+        margin: 0;
+        max-width: 570px;
+        overflow: hidden;
+        list-style: none;
+        h3 {
+            margin: 0 0 .5rem 0;
+            color: #333;
+        }
+        a {
+            display: block;
+            width: 100%;
+            color: #333;
+            box-sizing: border-box;
+            padding: 1rem $mobile-padding-lr;
+            border-radius: 6px;
+            &:hover {
+                background-color: #f5f5f5;
+            }
+        }
+        &:after {
+            content: " ";
+            display: block;
+            transform: scaleY(.5);
+            height: 1px;
+            background-color: #eee;
+            width: 100vw;
+            position: absolute;
+            bottom: 0;
+            left: $mobile-padding-lr;
+        }
+        &:last-child:after {
+            height: 0;
+        }
+    }
+}
+
+
 @media only screen and (max-width: 940px) {
     body>header {
-        position: static;
+        position: relative;
+        background-color: #000;
+        z-index: -999;
+        .marktext {
+            top: -.1rem;
+        }
+        .nav {
+            line-height: 18px;
+        }
+    }
+
+    .home {
+        background: #f9f9f9;
     }
     .post-header {
         margin-bottom: 1rem;
+    }
+
+    .post-list {
+        margin: 0;
     }
 }
