@@ -3,7 +3,10 @@
         var ua = navigator.userAgent.toLowerCase();
         return ua.match(/MicroMessenger/i) == "micromessenger";
     };
+
+    var header = document.querySelector('body>header');
     if (isWeixin()) {
-        document.title = "YUJIE LI"
+        document.title = "YUJIE LI";
+        document.body.classList.add('wechat');
     }
 </script>
