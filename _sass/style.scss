@@ -3,7 +3,7 @@
 $colorA: #60E4A4;
 $colorB: #554BF4;
 
-$mobile-padding-lr: 1.2rem;
+$mobile-padding-lr: 1.4rem;
 
 html {
     font-size: 16px;
@@ -137,7 +137,7 @@ article.wrapper {
     }
 
     .caption {
-        width: calc(100% - 2.4rem);
+        width: calc(100% - 2.8rem);
         margin: 1rem auto 0 auto;
         font-size: .8rem;
         max-width: 570px;
@@ -211,6 +211,9 @@ article.wrapper {
     padding: 0 $mobile-padding-lr+.1rem;
 }
 
+footer {
+    height: 90px;
+}
 .post-header {
     margin-bottom: 3rem;
 }
@@ -218,5 +221,8 @@ article.wrapper {
 @media only screen and (max-width: 940px) {
     body>header {
         position: static;
+    }
+    .post-header {
+        margin-bottom: 1rem;
     }
 }
