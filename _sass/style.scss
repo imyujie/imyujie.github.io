@@ -208,6 +208,9 @@ article.wrapper {
     }
 }
 
+.post {
+    padding-bottom: 6rem;
+}
 .post-meta {
     color: #888;
     font-size: 0.8rem;
@@ -310,7 +313,8 @@ footer {
         list-style: none;
         h3 {
             margin: 0 0 .5rem 0;
-            color: #333;
+            color: #111;
+            font-weight: 900;
         }
         a {
             display: block;

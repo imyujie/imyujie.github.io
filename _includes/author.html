@@ -1,7 +1,9 @@
 <div class="author-info">
-  <div class="avatar"></div>
+  <div class="avatar">
+    <img src="{{ '/assets/img/' + include.author.avatar | relative_url }}" alt="{{ include.author.name }}">
+  </div>
   <div class="info">
-    <div class="author-name">Tom Cruise</div>
-    <div class="author-desc">Lorem Ipsum</div>
+    <div class="author-name">{{ include.author.name }}</div>
+    <div class="author-desc">{{ include.author.brief }}</div>
   </div>
 </div>
