@@ -1,6 +1,7 @@
 <div class="author-info">
   <div class="avatar">
-    <img src="{{ '/assets/img/' + include.author.avatar | relative_url }}" alt="{{ include.author.name }}">
+    {% assign img_src = '/assets/img/' | append: include.author.avatar %}
+    <img width="48" src="{{ img_src | relative_url }}" alt="{{ include.author.name }}">
   </div>
   <div class="info">
     <div class="author-name">{{ include.author.name }}</div>
