@@ -3,7 +3,7 @@
 $colorA: #60E4A4;
 $colorB: #554BF4;
 
-$wrapper-width: 10rem;
+$wrapper-width: 11rem;
 $bleed-width: 14rem;
 
 $header-height: 2rem;
@@ -36,12 +36,15 @@ h1 {
     margin: 0;
 }
 body>header {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     position: fixed;
     top: 0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(0,0,0,.09);
-    background: #fff;
+    background: rgba(255,255,255,.75);
     height: $header-height;
     transition: height .3s;
     z-index: 999;
@@ -58,7 +61,8 @@ body>header.smaller {
     }
 }
 
-main {
+body main {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     background: #fafafa;
     min-height: 100vh;
     padding-top: $header-height;
@@ -140,8 +144,10 @@ main {
 
 article.wrapper {
     padding-top: $header-height;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 .post-content {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -247,6 +253,7 @@ article.wrapper {
     }
 
     h2 {
+        font-weight: 700;
         width: 100%;
         font-size: .75rem;
         line-height: 1.2rem;
@@ -308,7 +315,7 @@ article.wrapper {
     }
 
     blockquote {
-        margin: .5rem;
+        margin: 14px;
         
         p {
             font-size: 17px;
@@ -320,7 +327,7 @@ article.wrapper {
             }
             &:after {
                 font-size: 24px;
-                right: 5px;
+                right: 0;
             }
         }
         
@@ -330,6 +337,11 @@ article.wrapper {
         font-size: 14px;
     }
 
+    hr {
+        height: 3px;
+        width: 80px;
+        margin: 42px 0 56px 0;
+    }
     figure.highlight {
         margin: 28px 0;
     }
@@ -480,7 +492,7 @@ footer {
         h3 {
             margin: .21rem 0;
             color: #000;
-            font-weight: 900;
+            font-weight: 700;
             font-size: .53rem;
         }
         a {
@@ -553,7 +565,7 @@ footer {
     }
 
     .cat-icon {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .padding-wrapper {
