@@ -1,4 +1,38 @@
 <script>
+
+    var doc = window.document;
+    var docEl = doc.documentElement;
+    var metaEl = doc.createElement('meta');
+    var devicePixelRatio = window.devicePixelRatio;
+    var dpr = 0, scale = 0;
+
+    if(devicePixelRatio == 1){
+        dpr = 1;
+    }else if (devicePixelRatio == 2){
+        dpr = 2;
+    }else if (devicePixelRatio == 3){
+        dpr = 3;
+    }
+    scale = 1/dpr;
+
+    metaEl.setAttribute('name', 'viewport');
+    metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    docEl.firstElementChild.appendChild(metaEl);
+
+    function refreshRem(){
+        var width = docEl.getBoundingClientRect().width;
+        
+        if (width / dpr > 540) {
+            width = 540 * dpr;
+        }
+        console.log(width)
+        var rem = width / 375 * 16;
+        docEl.style.fontSize = rem + 'px';
+        console.log(rem)
+        // flexible.rem = win.rem = rem;
+    };
+    refreshRem();
+
     var isWeixin = function () { //判断是否是微信
         var ua = navigator.userAgent.toLowerCase();
         return ua.match(/MicroMessenger/i) == "micromessenger";

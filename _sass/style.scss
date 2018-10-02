@@ -3,10 +3,10 @@
 $colorA: #60E4A4;
 $colorB: #554BF4;
 
-$wrapper-width: 550px;
-$bleed-width: 800px;
+$wrapper-width: 34rem;
+$bleed-width: 50rem;
 
-$header-height: 77px;
+$header-height: 4.8rem;
 $mobile-padding-lr: 1.4rem;
 
 ::-moz-selection { background: #333; color: #fff; }
@@ -44,7 +44,7 @@ body>header {
 }
 
 body>header.smaller {
-    height: 44px;
+    height: 2.75rem;
 }
 
 main {
@@ -78,11 +78,11 @@ main {
 
 .nav {
     font-size: 0.8rem;
-    height: 44px;
+    height: 2.75rem;
     ul {
         margin: 0;
         padding: 0;
-        height: 44px;
+        height: 2.75rem;
         margin-right: -1rem;
         justify-content: space-between;
         li {
@@ -204,12 +204,6 @@ article.wrapper {
             width: 100%;
         }
     }
-    .image {
-        width: 100vw;
-        max-width: 780px;
-        height: 400px;
-        background-color: #f0f0f0;
-    }
 
     h2 {
         width: 100%;
@@ -227,9 +221,9 @@ article.wrapper {
 
     hr {
         border: none;
-        width: 100px;
+        width: 6.25rem;
         margin: 1.8rem 0 2.7rem 0;
-        height: 2px;
+        height: .12rem;
         background-color: #e6e6e6;
     }
 
@@ -279,10 +273,13 @@ article.wrapper {
 
     .avatar {
         overflow: hidden;
-        width: 48px;
-        height: 48px;
-        border-radius: 80px;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
         background-color: #eee;
+        img {
+            width: 100%;
+        }
     }
     .info {
         padding: .2rem 0;
@@ -363,18 +360,18 @@ footer {
     .cat-icon {
         display: inline-block;
         vertical-align: middle;
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
         text-align: center;
         font-size: 1.2rem;
     }
     .cat-name {
         vertical-align: middle;
         margin-left: 0px;
-        font-size: 14px;
+        font-size: .875rem;
     }
     .post-excerpt {
-        font-size: 14px;
+        font-size: .875rem;
         line-height: 1.75;
         p {
             margin: .8rem 0;
@@ -386,7 +383,7 @@ footer {
 
     .post-meta {
         display: inline-block;
-        font-size: 12px;
+        font-size: .75rem;
         line-height: .9rem;
         color: #999;
         margin-bottom: .5rem;
@@ -408,15 +405,15 @@ footer {
         transition: transform .3s;
     }
     .info .author-desc {
-        margin-top: 6px;
+        margin-top: .375rem;
         overflow: hidden;
         opacity: 1;
         transition: opacity .3s;
     }
 
     .avatar {
-        width: 48px;
-        height: 48px;
+        width: 3rem;
+        height: 3rem;
         transition: width .3s, height .3s;
         img {
             width: 100%;
@@ -430,11 +427,11 @@ footer {
             opacity: 0;
         }
         .author-name {
-            transform: translateY(10px)
+            transform: translateY(.625rem)
         }
         .avatar {
-            width: 24px;
-            height: 24px;
+            width: 1.5rem;
+            height: 1.5rem;
         }
     }
 }
