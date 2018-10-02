@@ -20,6 +20,9 @@ html {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
+pre, code {
+    font-family: monospace;
+}
 a {
     text-decoration: none;
     color: #888;
@@ -480,7 +483,11 @@ footer {
         margin: 0 auto;
     }
 
-    .post-content .imgcomp {
+    .post-content .imgcomp, figure.highlight {
         width: 100vw;
+    }
+
+    .highlight pre {
+        padding: .9rem $mobile-padding-lr;
     }
 }
