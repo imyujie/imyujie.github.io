@@ -9,4 +9,20 @@
         document.title = "YUJIE LI";
         document.body.classList.add('wechat');
     }
+
+    window.onload = function () {
+        function resizeHeaderOnScroll() {
+            const distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 100,
+            headerEl = document.querySelectorAll('.js-header')[0];
+            
+            if (distanceY > shrinkOn) {
+                headerEl.classList.add("smaller");
+            } else {
+                headerEl.classList.remove("smaller");
+            }
+        }
+
+        window.addEventListener('scroll', resizeHeaderOnScroll);
+    }
 </script>

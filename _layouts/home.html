@@ -2,33 +2,40 @@
   {% include head.html %}
   <body>
     {% include header.html %}
-    
+    <main>
     {%- if site.posts.size > 0 -%}
       <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
       <ul class="post-list wrapper">
         {%- for post in site.posts -%}
         <li>
           <a class="post-link" href="{{ post.url | relative_url }}">
+          <div class="padding-wrapper">
+            <span class="cat-icon">🔬</span>
+            <span class="cat-name">{{ post.categories }}</span>
+          </div>
+            <div class="thumbnail" style="background-image: url('{{ post.thumbnail }}');"></div>
+            <div class="padding-wrapper">
+              <h3>{{ post.title | escape }}</h3>
+              <div class="post-excerpt">{{ post.excerpt }}</div>
+              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+              <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
 
-          
-          <h3>{{ post.title | escape }}</h3>
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
 
-          <span class="post-meta reading-time" title="Estimated read time">
-              ・
-              {% assign words = post.content | strip_html | strip_newlines | split: "" | size %}
-            预计需要
-            {% if words < 360 %}
-              1 分钟
-            {% else %}
-              {{ words | divided_by:180 }} 分钟
-            {% endif %}
-          </span>
+              <span class="post-meta reading-time" title="Estimated read time">
+                  ・
+                  {% assign words = post.content | strip_html | strip_newlines | split: "" | size %}
+                预计用时
+                {% if words < 360 %}
+                  1 分钟
+                {% else %}
+                  {{ words | divided_by:180 }} 分钟
+                {% endif %}
+              </span>
 
-          {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-          {%- endif -%}
+              {%- if site.show_excerpts -%}
+                {{ post.excerpt }}
+              {%- endif -%}
+            </div>
           </a>
         </li>
         {%- endfor -%}
@@ -36,6 +43,7 @@
 
       <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
     {%- endif -%}
+  </main>
     {% include script.html %}
   </body>
 </html>
