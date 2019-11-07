@@ -1,2 +1,0 @@
-# imyujie.github.io
-BLOG
