@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{%- include header.html -%}
+
+<main class="home-page page-content" aria-label="Content">
+  <div class="fluid-layout">
+  {% for work in site.works %}
+    <h2>
+      <a href="{{ work.url }}">
+        {{ work.title }}
+      </a>
+    </h2>
+  {% endfor %}
+  </div>
+</main>
