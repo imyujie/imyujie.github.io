@@ -3,15 +3,21 @@ layout: default
 ---
 
 {%- include header.html -%}
+<div class="background">
+  <div class="yellow"></div>
+  <div class="purple"></div>
+  <div class="blue"></div>
+</div>
 
-<main class="home-page page-content" aria-label="Content">
+<main style="display:none" class="home-page page-content" aria-label="Content">
   <div class="fluid-layout">
-  {% for work in site.works %}
-    <h2>
-      <a href="{{ work.url }}">
-        {{ work.title }}
-      </a>
-    </h2>
-  {% endfor %}
+    {% for work in site.works %}
+        <a class="work" href="{{ work.url }}">
+          {%- include {{ work.cover }} -%}
+        </a>
+    {% endfor %}
   </div>
 </main>
+
+{%- include footer.html cls="home-footer" -%}
+
